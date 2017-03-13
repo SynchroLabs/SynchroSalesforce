@@ -1,0 +1,13 @@
+{
+  "name": "salesforce",
+  "version": "0.0.1",
+  "description": "Salesforce Sample",
+  "main": "main",
+  "private": true,
+  "engines": {
+    "synchro": "*"
+  },
+  "dependencies": {
+    "jsforce": "^1.7.1"
+  }
+}
