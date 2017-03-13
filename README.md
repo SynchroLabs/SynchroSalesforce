@@ -23,7 +23,11 @@ Synchro Salesforce will generally work out of the box with no configuration.  If
 
 If you receive a message like the following when attempting to login, you may need to use a security token as directed:
 
-    LOGIN_MUST_USE_SECURITY_TOKEN: Invalid username, password, security token; or user locked out. Are you at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of your company’s trusted networks, you must add a security token to your password to log in. To get your new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in the Quick Find box, then select Reset My Security Token.
+    LOGIN_MUST_USE_SECURITY_TOKEN: Invalid username, password, security token; or user locked out. Are you
+    at a new location? When accessing Salesforce--either via a desktop client or the API--from outside of
+    your company’s trusted networks, you must add a security token to your password to log in. To get your
+    new security token, log in to Salesforce. From your personal settings, enter Reset My Security Token in
+    the Quick Find box, then select Reset My Security Token.
 
 ## Updating Synchro Salesforce
 
