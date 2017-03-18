@@ -34,11 +34,48 @@ exports.Commands =
     {
         try
         {
-            var conn = new jsforce.Connection(
+            var conn;
+
+            // You can change loginUrl to connect to alternate endpoint (sandbox or prerelease env).
+            //
+            var loginUrl = Synchro.getConfig(context, "SF_LOGIN_URL");
+
+            // OAuth params (if set)
+            //
+            var clientId = Synchro.getConfig(context, "SF_CLIENT_ID");
+            var clientSecret = Synchro.getConfig(context, "SF_CLIENT_SECRET");
+            var redirectUri = Synchro.getConfig(context, "SF_REDIRECT_URI");
+
+            // With either login mechanism, user security token may need to be appended to password.
+            // 
+            if (clientId && clientSecret && redirectUri)
             {
-                // You can override default loginUrl to connect to sandbox or prerelease env.
-                // loginUrl : 'https://test.salesforce.com'
-            });
+                // Login using oAuth (user/pass)
+                //
+                // Note: With oAuth, you can remove the user security token requirment for a the connected
+                //       app by either being in the configured "Trusted IP Range" of the app or by setting 
+                //       the "IP Relaxation" value to "Relax IP restrictions" for the app.
+                //
+                console.log("Using OAuth with cliendId: ", clientId);
+                conn = new jsforce.Connection({
+                  oauth2 : {
+                    loginUrl : loginUrl,
+                    clientId : clientId,
+                    clientSecret : clientSecret,
+                    redirectUri : redirectUri
+                  }
+                });
+            }
+            else
+            {
+                // Login using plain user/pass
+                //
+                console.log("Using plain user/pass auth");
+                conn = new jsforce.Connection(
+                {
+                    loginUrl : loginUrl
+                });
+            }
 
             var userInfo = yield Synchro.yieldAwaitable(context, function(callback)
             { 
