@@ -4,6 +4,12 @@ This app is intended to be installed into a [Synchro Server](https://synchro.io)
 
 The Synchro Salesforce sample app demonstrates how to use Salesforce APIs from a Synchro environment via the [jsforce](https://www.npmjs.com/package/jsforce) JavaScript library (and npm module).  This app is just a starting point for developing your own Saleforce apps on the Synchro platform.
 
+The SynchroSalesforce example is a very simple Salesforce app. It has a "main" page where you can choose a sub-page (for now just one) or to logout. If you are not logged in when you arrive at the main page, you will be redirected to the "login" page. There is an "accounts" page that will show your current list of accounts, and if you tap an account, it will take you to the "account" page for that account.
+
+On iOS, it looks like this:
+
+![SynchroSalseforce](resources/SalesforceApp.png)
+
 ## Installing Synchro Salesforce
 
 To install in your Synchro Server environment using the Synchro CLI:
