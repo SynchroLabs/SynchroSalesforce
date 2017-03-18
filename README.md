@@ -31,14 +31,14 @@ If you receive a message like the following when attempting to login, you may ne
 
 By default, Synchro Salesforce employs user and password authentication to Salesforce.  This will require a security token in all cases, and is not suitable for a production deployment.  To use OAuth authentication, where you still use user and password, but authenticate as a Salesforce "Connected App", you can set the following values in your Synchro apps.json file:
 
-{
-    "synchro-salesforce": {
-        "container": "SynchroSalesforce",
-        "SF_CLIENT_ID": "xxxxx",
-        "SF_CLIENT_SECRET": "xxxxx",
-        "SF_REDIRECT_URI": "xxxxx"
+    {
+        "synchro-salesforce": {
+            "container": "SynchroSalesforce",
+            "SF_CLIENT_ID": "xxxxx",
+            "SF_CLIENT_SECRET": "xxxxx",
+            "SF_REDIRECT_URI": "xxxxx"
+        }
     }
-}
 
 You will still require a security token unless you do one of the following:
 
